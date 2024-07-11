@@ -1,0 +1,74 @@
+
+.container {
+  display: flex;
+  height: 100vh; /* Full viewport height to center vertically */
+  /* margin-left: 20px; */
+}
+
+/* Sidebar */
+.sidebar {
+  /* width: 50px;  */
+  /* margin: 20px; */
+  background-color: #f8f9fa; 
+  padding: 20px; 
+  display: flex;
+  align-items: center; 
+}
+
+
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
+}
+
+.menu li {
+  margin-bottom:5px; 
+  margin-top: 5px; 
+
+  font-size: small;
+  padding: 10px;
+}
+
+.menu li a {
+  position: relative; /* Add position relative to contain the pseudo-element */
+}
+
+.menu li a img {
+  width:60%; 
+}
+
+.menu .logout-img{
+  margin-bottom: -300px;;
+}
+.active-link img {
+ 
+  /* border-left: 5px solid #007bff;
+  border-radius: 5px; */
+  padding: 10px;
+  
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px; 
+}
+
+.active-link::before {
+  content: ''; /* Required for the pseudo-element */
+  position: absolute; /* Absolute positioning to place it correctly */
+  left: -5px; /* Adjust according to your design */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #007bff; /* Border color */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 25px;
+  margin-top: -22px;
+
+}

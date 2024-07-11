@@ -1,0 +1,146 @@
+.logo {
+  background-image: url("../../assets/images/login-bg-1.svg");
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 768;
+  width: 1366;
+  border-bottom-left-radius: 70px;
+  
+}
+
+.logo img {
+  margin-bottom: 1rem;
+  margin-top: -120px;
+  
+}
+
+.logo h2 {
+  color: white;
+  font-weight: 200;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  margin-top: -200px;
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 330px;
+  height: 300px;
+}
+
+.login-header img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #a19f9f;
+  margin-bottom: 0.5rem;
+  margin-right: 300px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+ 
+  border-radius: 4px;
+  border: 1px solid #a5a1a1;
+}
+
+.form-group input.is-invalid {
+  border: 2px solid red; /* Increase border width to 2px */
+}
+.form-group label.is-invalid{
+color: red;
+}
+
+.col {
+  margin-left: 245px;
+  padding-top: 10px;
+  font-size: 0.66rem;
+}
+
+.login-button {
+  width: 60%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: white;
+  background: #0a5ab0;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background: #0a5ab0;;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-input {
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.invalid-feedback {
+  color: red;
+  text-align: left;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+

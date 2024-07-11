@@ -1,0 +1,103 @@
+<div class="header">
+  <button class="back-button" (click)="goBack()">
+    <img src="assets/back-arrow.svg" alt="Back">
+  </button>
+  <h2 class="h2">Create Project</h2>
+  <div class="logo-container">
+    <img class="logo" src="assets/Logo.svg" alt="Logo">
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group flex-grow-1">
+           
+            <input id="theme" formControlName="theme" type="text" class="form-control" placeholder="Enter Project Theme" style="height: 50px; width: 900px;" />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-save rounded-pill">Save Project</button>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="form-group">
+            <label for="reason">Reason</label>
+            <select id="reason" formControlName="reason" class="form-control">
+              <option value="Business">Business</option>
+              <option value="Dealership">Dealership</option>
+              <option value="Transport">Transport</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select id="type" formControlName="type" class="form-control">
+              <option value="Internal">Internal</option>
+              <option value="External">External</option>
+              <option value="Vendor">Vendor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="division">Division</label>
+            <select id="division" formControlName="division" class="form-control">
+              <option value="Compressor">Compressor</option>
+              <option value="Filters">Filters</option>
+              <option value="Pumps">Pumps</option>
+              <option value="Glass">Glass</option>
+              <option value="Water Heater">Water Heater</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" formControlName="category" class="form-control">
+              <option value="Quality A">Quality A</option>
+              <option value="Quality B">Quality B</option>
+              <option value="Quality C">Quality C</option>
+              <option value="Quality D">Quality D</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select id="priority" formControlName="priority" class="form-control">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" formControlName="department" class="form-control">
+              <option value="Strategy">Strategy</option>
+              <option value="Finance">Finance</option>
+              <option value="Quality">Quality</option>
+              <option value="Maintenance">Maintenance</option> 
+              <option value="Stores">Stores</option> 
+              <option value="HR">Stores</option> 
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="startDate">Start Date as per Project Plan</label>
+            <input id="startDate" formControlName="startDate" type="date" class="form-control" placeholder="D Month, Yr" />
+          </div>
+          <div class="form-group">
+            <label for="endDate">End Date as per Project Plan</label>
+            <input id="endDate" formControlName="endDate" type="date" class="form-control" placeholder="D Month, Yr" />
+          </div>
+          
+          <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" formControlName="location" class="form-control">
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+            </select>
+          </div>
+        </div>
+        <div class="status-group">
+          <label>Status: <b>Registered</b></label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

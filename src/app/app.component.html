@@ -1,0 +1,40 @@
+<div class="container" *ngIf="!isLoginPage()">
+    <div class="sidebar" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+        <nav class="menu">
+            <ul >
+                <li>
+                  <a routerLink="/dashboard" routerLinkActive="active-link" [ngClass]="{'active': isDashboardPage()}">
+                    <img src="assets/Dashboard{{ isDashboardPage() ? '-active' : '' }}.svg" alt="Dashboard" class="dashboard-img">
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/project-details" routerLinkActive="active-link" [ngClass]="{'active': isProjectDetailsPage()}">
+                    <img src="assets/Project-list{{ isProjectDetailsPage() ? '-active' : '' }}.svg" alt="Project Listing" class="project-list-img">
+                  </a>
+                </li>
+                <li style="margin-left: -10px;">
+                   <hr/>
+                                  </li>
+                <li>
+                  <a routerLink="/project" routerLinkActive="active-link" [ngClass]="{'active': isProjectPage()}">
+                    <img src="assets/create-project{{ isProjectPage() ? '-active' : '' }}.svg" alt="Add Project" class="create-project-img">
+                  </a>
+                </li>
+              </ul>
+            <ul class="logout-section">
+                <li class="logout" [ngClass]="{'inactive': !isLoginPage()}">
+                    <a routerLink="/">
+                        <img src="assets/Logout{{ isLoginPage() ? '' : '-inactive' }}.svg" alt="Logout" class="logout-img">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div *ngIf="isLoginPage()">
+    <router-outlet></router-outlet>
+</div>

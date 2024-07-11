@@ -1,0 +1,79 @@
+<div class="header">
+  <button class="back-button" (click)="goBack()">
+    <img src="assets/back-arrow.svg" alt="Back">
+  </button>
+  <h2 class="h2">Project Listing</h2>
+  <div class="logo-container">
+    <img class="logo" src="assets/Logo.svg" alt="Logo">
+  </div>
+</div>
+
+<div class="container">
+  <div class="search-box">
+    <div style="display: flex; align-items: center; border-bottom: 1px solid rgb(91, 91, 91); padding: 5px; color: gray;">
+      <i class="fas fa-search search-icon" style="margin-right: 10px;"></i>
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterProjects()" placeholder="Search..." style="border: none;">
+    </div>
+
+    <div class="sort-container">
+      <label style="color: gray;" for="sort-by">Sort By: </label>
+      <select style="border: none;" id="sort-by" [(ngModel)]="sortOption" (change)="sortProjects()">
+        <option value="priority">Priority</option>
+        <option value="theme">Project Name</option>
+        <option value="reason">Reason</option>
+        <option value="type">Type</option>
+        <option value="division">Division</option>
+        <option value="category">Category</option>
+        <option value="department">Department</option>
+        <option value="startDate">Start Date</option>
+        <option value="endDate">End Date</option>
+        <option value="location">Location</option>
+        <option value="status">Status</option>
+      </select>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Project Name</th>
+        <th>Priority</th>
+        <th>Reason</th>
+        <th>Type</th>
+        <th>Division</th>
+        <th>Category</th>
+        <th>Department</th>
+        <th>Location</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of filteredProjects | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <td>
+          <div style="text-align: left;">{{ project.theme }}</div>
+          <div style="text-align: left;" class="date-range">
+            {{ project.startDate | date: 'MMM-dd, yyyy' }} to {{ project.endDate | date: 'MMM-dd, yyyy' }}
+          </div>
+        </td>
+        <td class="date-range">{{ project.priority }}</td>
+        <td class="date-range">{{ project.reason }}</td>
+        <td class="date-range">{{ project.type }}</td>
+        <td class="date-range">{{ project.division }}</td>
+        <td class="date-range">{{ project.category }}</td>
+        <td class="date-range">{{ project.department }}</td>
+        <td class="date-range">{{ project.location }}</td>
+        <td class="date-range"><b>{{ project.status }}</b></td>
+        <td class="status-buttons">
+          <button class="start-button" (click)="updateProjectStatus(project, 'Running')">Start</button>
+          <button class="close-button" (click)="updateProjectStatus(project, 'Closed')">Close</button>
+          <button class="cancel-button" (click)="updateProjectStatus(project, 'Cancelled')">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-container">
+    <pagination-controls (pageChange)="currentPage = $event" [directionLinks]="true" [autoHide]="true"
+      previousLabel="&laquo;" nextLabel="&raquo;" firstLabel="&#171;" lastLabel="&#187;">
+    </pagination-controls>
+  </div>
+</div>

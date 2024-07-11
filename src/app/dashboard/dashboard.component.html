@@ -1,0 +1,52 @@
+
+
+  <div class="header">
+    <h2 class="h2">Dashboard</h2>
+    <div class="logo-container">
+      <img class="logo" src="assets/Logo.svg" alt="Logo">
+    </div>
+  </div>
+<div class="dashboard">
+    <div class="section1">
+        <div class="card">
+            <h3>Total Projects</h3>
+            <p>{{ totalProjects }}</p>
+        </div>
+        <div class="card">
+            <h3>Closed</h3>
+            <p>{{ closedProjects }}</p>
+        </div>
+        <div class="card">
+            <h3>Running</h3>
+            <p>{{ runningProjects }}</p>
+        </div>
+        <div class="card">
+            <h3>Closure Delay</h3>
+            <p>{{ closureDelay }}</p>
+        </div>
+        <div class="card">
+            <h3>Cancelled</h3>
+            <p>{{ cancelledProjects }}</p>
+        </div>
+    </div>
+    
+    <div class="section2">
+        <canvas id="departmentChart"></canvas>
+    </div>
+    <div class="section3">
+        <h2>Department wise - Total Vs Closed</h2>
+        <canvas id="successChart"></canvas>
+    </div>
+</div>
+<!-- <nav class="menu">
+    <ul>
+      <li><a routerLink="/dashboard"><img src="assets/Dashboard-active.svg" alt="Dashboard"></a></li>
+      <li><a routerLink="/project-details"><img src="assets/Project-list.svg" alt="Project Listing"></a></li>
+      <li><a routerLink="/project"><img src="assets/create-project.svg" alt="Add Project"></a></li>
+      <li class="logout"><a routerLink="/logout"><img src="assets/Logout.svg" alt="Logout"></a></li>
+    </ul>
+  </nav> -->
+  <div class="chart-container">
+    <canvas #successChart></canvas>
+  </div>
+  
